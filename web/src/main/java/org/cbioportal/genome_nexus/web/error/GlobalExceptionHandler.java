@@ -74,4 +74,10 @@ public class GlobalExceptionHandler
     {
         return new ResponseEntity<>(new ErrorResponse(ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(CuriousCasesCommentNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleCuriousCasesCommentNotFound(CuriousCasesCommentNotFoundException ex)
+    {
+        return new ResponseEntity<>(new ErrorResponse(ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
+    }
 }
