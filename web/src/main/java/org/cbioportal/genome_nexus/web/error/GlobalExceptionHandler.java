@@ -74,4 +74,10 @@ public class GlobalExceptionHandler
     {
         return new ResponseEntity<>(new ErrorResponse(ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(CuriousCasesNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleCuriousCasesNotFound(CuriousCasesNotFoundException ex)
+    {
+        return new ResponseEntity<>(new ErrorResponse(ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
+    }
 }
